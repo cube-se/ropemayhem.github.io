@@ -2,6 +2,10 @@
 
 require "yaml"
 
+def echo(what)
+  puts "\n╓───── #{what} \n╙────────────────────────────────────── ─ ─ \n"
+end
+
 def generate_categories(category)
   output = "<ul>"
   category.each do |item|
@@ -18,7 +22,7 @@ def generate_categories(category)
   return output
 end
 
-puts "--- Generating stores files ---"
+echo "Generating store files"
 
 YAML.load_file("_data/stores.yml").each do |store|
   template_file = File.read("_templates/shop.md")
@@ -38,6 +42,3 @@ YAML.load_file("_data/stores.yml").each do |store|
     |file| file.write(template_file)
   }
 end
-
-
-
