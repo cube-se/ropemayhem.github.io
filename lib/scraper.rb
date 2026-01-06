@@ -14,7 +14,7 @@ module Scraper
     def start
       agent = Agent.new
       data = Data.new("_data/events.yml")
-      Runner.new(Recepts.redlily_com(agent.mechanize, data))
+      Runner.new(Recepts.yorokobi_nu(agent.driver, data))
     end
   end
 end
